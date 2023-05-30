@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>FilmDiarieZ</title>
+</head>
+<body>
+<div class="container px-4">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'index' %}" id="logo" style="font-size: 2em;">🍿FilmDiarieZ</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="buttons">
+        <a href="{% url 'diary' %}">
+            <button class="nav{% if request.path == '/diary/' %} active{% endif %}" id="diary">Diary</button>
+        </a>
+        <a href="{% url 'watchlist' %}">
+            <button class="nav{% if request.path == '/watchlist/' %} active{% endif %}" id="watchlist">Watchlist
+            </button>
+        </a>
+        <a href="{% url 'favorites' %}">
+            <button class="nav{% if request.path == '/favorites/' %} active{% endif %}" id="favorites">Favorites
+            </button>
+        </a>
+
+    </div>
+    <main>
+        {% block content %}
+        <br>
+        <h3>Welcome to FilmDiariez!</h3>
+        <li>Click "Diary" to keep track of your movie experiences,</li>
+        <li>"Watchlist" to organize your must-see films, and</li>
+        <li>"Favorites" to revisit old favorites.</li>
+        <p>Enjoy the cinematic journey at your fingertips.</p>
+        <p>Let's dive in and explore the world of movies together!</p>
+        {% endblock%}
+    </main>
+</div>
+</body>
+</html>
