@@ -52,30 +52,6 @@ def index(request):
     return render(request, "base.html")
 
 
-@login_required
-def add_movie(request):
-    if request.method == 'POST':
-        form = MovieForm(request.POST)
-        if form.is_valid():
-            movie = form.save(commit=False)
-            movie.user = request.user
-            movie.is_watchlist = False
-
-            if form.cleaned_data['is_favorite']:
-                movie.is_favorite = True
-                favorite_movie = FavoriteMovie(user=request.user, movie=movie)
-                favorite_movie.save()
-
-            movie.save()
-            return redirect('diary')
-    else:
-        form = MovieForm()
-
-    context = {
-        'form': form,
-    }
-    return render(request, 'diary.html', context)
-
 
 @login_required
 def diary(request):
