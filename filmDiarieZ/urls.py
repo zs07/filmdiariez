@@ -11,7 +11,6 @@ urlpatterns = [
     path('watchlist/', watchlist, name='watchlist'),
     path('diary/', diary, name='diary'),
     path('favorites/', favorites, name='favorites'),
-    path('add_movie/', views.add_movie, name='add_movie'),  # Add this line for adding movies
     path('accounts/signup/', views.signup_view, name='signup'),
     path('accounts/login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
