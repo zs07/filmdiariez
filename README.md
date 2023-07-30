@@ -1,5 +1,7 @@
 # filmdiariez
 a django project that tracks your movie watching experience.
+
+
 <img width="960" alt="" src="https://github.com/zs07/filmdiariez/assets/92306226/a7efb880-0e8c-4562-8ead-8f45bfe58eea">
 <img width="960" alt="" src="https://github.com/zs07/filmdiariez/assets/92306226/a076f959-dbc6-4496-9823-f066805606ee">
 <img width="960" alt="" src="https://github.com/zs07/filmdiariez/assets/92306226/49f24c9a-0c62-44ff-8e7e-4191c80a7dc0">
